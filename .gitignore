@@ -1,3 +1,8 @@
+.DS_Store
+
+source/build/
+vendor/
+
 # Logs
 logs
 *.log
