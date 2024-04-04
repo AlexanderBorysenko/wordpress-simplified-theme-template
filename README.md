@@ -1,0 +1,1 @@
+# wordpress-simplified-theme-template
