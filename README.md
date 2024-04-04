@@ -1,1 +1,1 @@
-# wordpress-simplified-theme-template
+# easy-level-tutroal-theme
