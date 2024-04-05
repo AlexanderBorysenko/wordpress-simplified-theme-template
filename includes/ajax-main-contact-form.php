@@ -1,5 +1,13 @@
 <?php
-// ajax action for main contact form
+/**
+ * Handles the submission of the main contact form via AJAX.
+ *
+ * This function is hooked to the 'wp_ajax_main_contact_form_submit' and 'wp_ajax_nopriv_main_contact_form_submit' actions.
+ * It validates the form fields and sends an email with the form data if there are no errors.
+ * If there are errors, it returns a JSON response with the error messages.
+ *
+ * @return void
+ */
 add_action('wp_ajax_main_contact_form_submit', 'main_contact_form_submit');
 add_action('wp_ajax_nopriv_main_contact_form_submit', 'main_contact_form_submit');
 

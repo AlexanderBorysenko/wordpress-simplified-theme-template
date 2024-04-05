@@ -1,5 +1,8 @@
 <?php
-// create blog post type with blog_category taxonomy
+/**
+ *  create 'blog' post type 
+ */
+
 function create_blog_post_type()
 {
     register_post_type(

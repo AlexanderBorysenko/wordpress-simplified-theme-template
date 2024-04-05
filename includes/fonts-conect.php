@@ -1,4 +1,7 @@
 <?php
+/**
+ * Connects the required fonts by adding the necessary HTML links to the head section of the website.
+ */
 function connect_fonts()
 {
     ?>
@@ -10,5 +13,6 @@ function connect_fonts()
         rel="stylesheet">
     <?php
 }
+
 add_action('wp_head', 'connect_fonts');
 add_action('admin_head', 'connect_fonts');

@@ -1,5 +1,12 @@
 <?php
-// disble wordpress comments
+/**
+ * Disables comments functionality in WordPress.
+ *
+ * This function removes the ability to manage comments from the admin menu,
+ * disables comments for posts and pages, removes the comments section from the
+ * admin bar, hides recent comments from the dashboard, and modifies the quick
+ * edit dropdown pages to exclude pages with a specific page template.
+ */
 function disable_comments()
 {
     // Removes from admin menu

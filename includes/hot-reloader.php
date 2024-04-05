@@ -1,14 +1,23 @@
 <?php
+/**
+ * Retrieves the version of the CSS file used for hot reloading.
+ *
+ * @return int|false The version of the CSS file, or false if the file is not found.
+ */
 function get_version()
 {
-    $fileName = resolveBuildFileName('app-*.css');
+    $fileName = resolve_source_build_filename('app-*.css');
     if (!$fileName) {
         return false;
     }
 
-    $version = filemtime(get_template_directory() . '/source/build/' . resolveBuildFileName('app-*.css'));
+    $version = filemtime(get_template_directory() . '/source/build/' . resolve_source_build_filename('app-*.css'));
     return $version;
 }
+
+/**
+ * Sends the current version of the CSS file as a JSON response.
+ */
 function ajax_get_version()
 {
     wp_send_json(get_version());
@@ -18,6 +27,10 @@ function ajax_get_version()
 add_action('wp_ajax_get_current_version', 'ajax_get_version');
 add_action('wp_ajax_nopriv_get_current_version', 'ajax_get_version');
 
+/**
+ * Handles the hot reloading functionality by periodically checking for a new version of the CSS file.
+ * If a new version is found, the page is reloaded.
+ */
 function handleHotReload()
 {
     ?>
